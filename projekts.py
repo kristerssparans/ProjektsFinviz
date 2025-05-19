@@ -10,7 +10,7 @@ if lapa.status_code == 200:
     lapas_saturs = BeautifulSoup(lapa.content, "html.parser")
 
     print("Izvēles iespējas:")
-    print("1. Akcijas atrašana")
+    print("1. Akcijas atrašana + ekspertu viedoklis")
     print("2. Top5 akciju pareģojumu izvade nākamajiem 12 mēnešiem.")
     izvele = input("Ievadi skaitli: ")
 
@@ -35,7 +35,7 @@ if lapa.status_code == 200:
                         forecast_saturs = BeautifulSoup(open_forecast.content, "html.parser")
 
                         paregojums = forecast_saturs.find(class_="-mt-2 text-center text-xl font-semibold")
-                        print(f"Expertu viedoklis par izvēlēto akciju - {paregojums.find("span").text}")
+                        print(f"Expertu viedoklis par izvēlēto akciju - {paregojums.find('span').text}")
                         exists = True
 
             if exists != True:
@@ -55,7 +55,7 @@ if lapa.status_code == 200:
                 openpage_saturs = BeautifulSoup(openpage.content, "html.parser")
                 paregojums = openpage_saturs.find(class_="-mt-2 text-center text-xl font-semibold")
                 cena = openpage_saturs.find(class_="text-green-700 dark:text-green-500")
-                print(f"{stock} - {paregojums.find("span").text} {cena.text}")
+                print(f"{stock} - {paregojums.find('span').text} {cena.text}")
             else:
                 print("Kļūda datu ieguvē.")
 
