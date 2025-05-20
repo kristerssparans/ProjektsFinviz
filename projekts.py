@@ -26,13 +26,13 @@ while True:
                 print(f"{symbol} - tika atrasts")
                 jaunas_lapas_saturs = BeautifulSoup(jauna_lapa.content, "html.parser")
 
-                cena = jaunas_lapas_saturs.find(class_="text-4xl font-bold transition-colors duration-300 inline-block").text
+                cena = jaunas_lapas_saturs.find(class_="text-4xl font-bold transition-colors duration-300 block sm:inline").text
                 print(f"Akcijas cena šobrīd - {cena}$")
 
                 try:
-                    izmainas_procenti = jaunas_lapas_saturs.find(class_="font-semibold inline-block text-2xl text-green-vivid").text
+                    izmainas_procenti = jaunas_lapas_saturs.find(class_="font-semibold block text-lg xs:text-xl sm:inline sm:text-2xl text-green-vivid").text
                 except:
-                    izmainas_procenti = jaunas_lapas_saturs.find(class_="font-semibold inline-block text-2xl text-red-vivid").text
+                    izmainas_procenti = jaunas_lapas_saturs.find(class_="font-semibold block text-lg xs:text-xl sm:inline sm:text-2xl text-red-vivid").text
 
                 izmainas_cena = jaunas_lapas_saturs.find_all(class_="flex flex-col border-b border-default py-1 sm:table-row sm:py-0")
                 for tr in izmainas_cena:
