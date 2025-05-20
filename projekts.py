@@ -26,21 +26,18 @@ while True:
                 print(f"{symbol} - tika atrasts")
                 jaunas_lapas_saturs = BeautifulSoup(jauna_lapa.content, "html.parser")
 
-                cena = jaunas_lapas_saturs.find(class_="text-4xl font-bold transition-colors duration-300 block sm:inline").text
-                print(f"Akcijas cena šobrīd - {cena}$")
-
-                try:
-                    izmainas_procenti = jaunas_lapas_saturs.find(class_="font-semibold block text-lg xs:text-xl sm:inline sm:text-2xl text-green-vivid").text
-                except:
-                    izmainas_procenti = jaunas_lapas_saturs.find(class_="font-semibold block text-lg xs:text-xl sm:inline sm:text-2xl text-red-vivid").text
+                cena = jaunas_lapas_saturs.find(class_="mb-5 flex flex-row items-end space-x-2 xs:space-x-3 bp:space-x-5").text
+                info = cena.split(" ")
+                print(f"Akcijas cena - {info[1]}")
 
                 izmainas_cena = jaunas_lapas_saturs.find_all(class_="flex flex-col border-b border-default py-1 sm:table-row sm:py-0")
                 for tr in izmainas_cena:
                     if tr.find(class_="whitespace-nowrap px-0.5 py-[1px] xs:px-1 sm:py-2").text == "Previous Close":
                         iepriekseja_cena = tr.find(class_="whitespace-nowrap px-0.5 py-[1px] text-left text-smaller font-semibold tiny:text-base xs:px-1 sm:py-2 sm:text-right sm:text-small").text
                         print(f"Akcijas cena iepriekšējā dienā - {iepriekseja_cena}")
-                print(f"Izmaiņas pa 24 stundām : {izmainas_procenti}")
+                print(f"Izmaiņas pa 24 stundām : {info[2] + info[3]}")
 
+                exists = False
                 navigation = jaunas_lapas_saturs.find(class_="navmenu").find_all("a")
                 for value in navigation:
                     if value.text == "Forecast":
