@@ -1,7 +1,7 @@
 # ProjektsStockAnalysis
 Projekta darbs, ko izstrādājuši Kristers Sparāns un Matīss Šķēle, izmantojot mājaslapu StockAnalysis un 'web scraping'.
 
-Projekta mērķis ir saprast, kā pielietot "web-scraping" metodi sev noderīgi. Mūsu izveidotais projekts atrod piecas populārākās akcijas un passaka, vai citi akciju tirgus speciālisti iesaka izvēlēto akciju pirkt. Izmantojot "web-scraping" un python prasmes, spējām izveidot kodu, kas nosaka piecas populārākās akcijas vai atsevišķu akciju investoru viedokļus. Pati programma atvieglo pašam manuāli pārskatīt katru akciju individuāli un ļauj lietotājam ietaupīt savu laiku. 
+Projekta mērķis ir saprast, kā pielietot "web-scraping" metodi sev noderīgi. Mūsu izveidotais projekts atrod piecas populārākās akcijas un passaka izvēlētās akcijas cenu noteiktos laika posmos un tās izmaiņas 24h laikā, kā arī vai citi akciju tirgus speciālisti iesaka izvēlēto akciju pirkt. Izmantojot "web-scraping" un python prasmes, spējām izveidot kodu, kas nosaka piecas populārākās akcijas vai atsevišķu akciju investoru viedokļus. Pati programma atvieglo pašam manuāli pārskatīt katru akciju individuāli un ļauj lietotājam ietaupīt savu laiku. 
 
 Darbības gaita:
 
